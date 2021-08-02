@@ -1,8 +1,9 @@
 function factorial(n) {
   let sum = 1;
-  for (let iteration = 1; iteration <= n; iteration++){
-      sum *= iteration;
-  }
+  do {
+      sum *= n;
+      n--;
+  } while (n>0)
   return sum
 }
 
