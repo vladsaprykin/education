@@ -1,5 +1,6 @@
 function findPair(arr) {
-  // Напиши свой код здесь
+  let temp = arr[0];
+  arr.forEach(item)
 };
 
 window.findPair = findPair;

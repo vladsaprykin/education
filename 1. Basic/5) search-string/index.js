@@ -1,19 +1,19 @@
         function searchString(obj) {
-            let query = '';
+            let str = '';
             if (obj) {
                 let keys = Object.keys(obj);
                 keys.forEach((element, index) => {
                     if (index === 0) {
-                        query += '?';
+                        str += '?';
                     }
                     if (obj[element] !== '' && obj[element] !== null && obj[element] !== undefined) {
                         if (index < keys.length && index !== 0) {
-                            query += '&';
+                            str += '&';
                         }
-                        query += element + '=' + obj[element]
+                        str += element + '=' + obj[element]
                     }
                 });
-                return query;
+                return str;
             }
         }
 
