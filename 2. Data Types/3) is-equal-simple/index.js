@@ -1,17 +1,18 @@
 function isEqual(a, b) {
-    if (a === null || b === null) {
+    if (a === null || b === null || Object.keys(a).length !== Object.keys(b).length || Object.values(a).length !== Object.values(b).length) {
         return false
     }
-    if (!Object.keys(a).length && !Object.keys(b).length) {
+    function compareArrays(a, b) {
+        for (let i = 0; i < a.length; i++)
+            if (b.indexOf(a[i]) == -1) {
+                return false
+            }
         return true
     }
-    for (let key in a) {
-        console.log(key)
-        if (Object.keys(a).length !== Object.keys(b).length || !Object.keys(b).includes(key) || a[key] !== b[key]) {
-            return false
-        }
+    if (compareArrays(Object.keys(a), Object.keys(b))) {
+        return compareArrays(Object.values(a), Object.values(b));
     }
-    return true;
+    return false;
 }
 
 window.isEqual = isEqual;
