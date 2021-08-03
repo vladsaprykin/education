@@ -1,5 +1,5 @@
 function basicCalc(operation, a, b) {
-    switch(operation) {
+    switch (operation) {
         case '+':
             return a + b
         case '-':
