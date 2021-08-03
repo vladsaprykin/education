@@ -3,14 +3,13 @@ function fullSum(...args) {
     if (arrayArgs.length === 0) {
         return 0
     }
-    let sum = 0;
-    arrayArgs.forEach(item => {
-        if (typeof item !== "number") {
+    const reducer = (accumulator, currentValue) => {
+        if (typeof currentValue !== "number"){
             throw new SyntaxError("Wrong arguments type!");
         }
-        sum += item;
-    })
-    return sum;
+        return accumulator + currentValue
+    };
+    return arrayArgs.reduce(reducer,0)
 }
 
 window.fullSum = fullSum;
