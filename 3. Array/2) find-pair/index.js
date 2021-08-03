@@ -1,6 +1,6 @@
 function findPair(arr) {
     for (let item = 0; item < arr.length; item++){
-        let temp = arr[item];
+        const temp = arr[item];
         if (item === arr.length - 1){
             continue
         }

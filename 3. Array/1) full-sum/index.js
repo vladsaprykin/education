@@ -1,8 +1,6 @@
 function fullSum(...args) {
-    let arrayArgs = [...args]
-    if (arrayArgs.length === 0) {
-        return 0
-    }
+    const arrayArgs = [...args]
+    if (!arrayArgs.length) return 0
     const reducer = (accumulator, currentValue) => {
         if (typeof currentValue !== "number"){
             throw new SyntaxError("Wrong arguments type!");

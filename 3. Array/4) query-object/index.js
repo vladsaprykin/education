@@ -11,8 +11,7 @@ function queryToObject(query) {
         return undefined;
       default:
         if (str !== ""){
-          let num;
-          num = Number(str);
+          const num = Number(str);
           if (num || num === 0) {
             return (num);
           }
@@ -20,12 +19,12 @@ function queryToObject(query) {
         return str
     }
   }
-  if (!query && query === '?') return {}
   const object = {};
-  let arrayQuery = query.split(/[?&]/gm);
+  if (!query && query === '?') return object
+  const arrayQuery = query.split(/[?&]/gm);
   arrayQuery.shift();
   arrayQuery.forEach(item => {
-    let tempArray = item.split('=');
+    const tempArray = item.split('=');
     object[tempArray[0]] = stringToType(tempArray[1]);
   })
   return object

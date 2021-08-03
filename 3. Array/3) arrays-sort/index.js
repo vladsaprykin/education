@@ -1,8 +1,8 @@
 function arraysSort(arr) {
-    arr.sort(compare);
     function compare(a, b) {
         return Math.max(...a) - Math.max(...b)
     }
+    arr.sort(compare);
     return arr.map((elem) => elem)
 };
 
