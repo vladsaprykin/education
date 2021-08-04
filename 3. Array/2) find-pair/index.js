@@ -1,19 +1,9 @@
 function findPair(arr) {
-    for (let i = 0; i < arr.length; i++){
-        const item = arr[i];
-        if (i === arr.length - 1){
-            continue
-        }
-        for (let pair = 1; pair < arr.length; pair++){
-            if (i === pair) {
-                continue
-            }
-            if (item === arr[pair]){
-                return item
-            }
-        }
-    }
-    return null
+    const arr2 = arr.splice(Math.ceil(arr.length/2))
+    const duplicates = arr.filter(function(val) {
+        return arr2.indexOf(val) != -1;
+    });
+    return (!duplicates.length) ? null : duplicates[0]
 };
 
 window.findPair = findPair;
