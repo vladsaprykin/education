@@ -1,15 +1,15 @@
 function findPair(arr) {
-    for (let item = 0; item < arr.length; item++){
-        const temp = arr[item];
-        if (item === arr.length - 1){
+    for (let i = 0; i < arr.length; i++){
+        const item = arr[i];
+        if (i === arr.length - 1){
             continue
         }
         for (let pair = 1; pair < arr.length; pair++){
-            if (item === pair) {
+            if (i === pair) {
                 continue
             }
-            if (temp === arr[pair]){
-                return temp
+            if (item === arr[pair]){
+                return item
             }
         }
     }
