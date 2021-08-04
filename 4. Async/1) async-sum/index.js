@@ -1,5 +1,5 @@
 function asyncSum(a, b) {
-    let promise = new Promise((resolve, reject) => {
+    return new Promise(function (resolve, reject) {
         setTimeout(() => {
             if (typeof (a) === "number" && typeof (b) === "number") {
                 resolve(a + b);
@@ -7,16 +7,6 @@ function asyncSum(a, b) {
             reject(new Error("error"));
         }, 1000);
     });
-    promise
-        .then(
-            result => {
-                return result
-            },
-            error => {
-                return error
-            }
-        );
-    return promise
 }
 
 window.asyncSum = asyncSum;
