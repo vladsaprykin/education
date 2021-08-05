@@ -2,8 +2,8 @@ function arraysSort(arr) {
     function compare(a, b) {
         return Math.max(...a) - Math.max(...b)
     }
-    arr.sort(compare);
-    return arr.map((elem) => elem)
+    const arrSorted = [...arr].sort(compare);
+    return arrSorted
 };
 
 window.arraysSort = arraysSort;
