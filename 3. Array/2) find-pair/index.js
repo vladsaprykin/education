@@ -1,12 +1,12 @@
 function findPair(arr) {
-    const res = [];
-    const arrSorted = arr;
+    const arrSorted = [...arr];
     arrSorted.sort((a, b) => a - b);
-    const findEl = arrSorted.find((el)=>{
-        if (res.includes(el)) return el
-        res.push(el)
+    const res = arrSorted.find((el,index)=>{
+        if (index === arr.length - 1) return undefined
+        const next = arrSorted[index + 1]
+        if (el === next) return el
     })
-    return (findEl === undefined) ?  null : findEl
+    return (res === undefined) ? null : res
 };
 window.findPair = findPair;
 
