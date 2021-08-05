@@ -16,3 +16,6 @@
 .block-form__main-form input:nth-child(odd){
     text-transform: uppercase;
 }
+.block-form__main-form input:nth-child(even){
+    text-transform: lowercase;
+}
