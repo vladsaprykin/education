@@ -1,8 +1,5 @@
-/*
-  Задача:
-  Добавить функции метод reverse, который будет переворачивать строку на оборот
-  Примеры:
-  'test'.reverse() === 'tset';
-  'bob'.reverse() === 'bob';
-  'abc123'.reverse() === '321cba';
- */
+function reverseStr(str) {
+    if (!str) str = this;
+    return str.split('').reverse().join(``)
+}
+String.prototype.reverse = reverseStr;

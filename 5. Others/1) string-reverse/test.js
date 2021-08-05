@@ -1,5 +1,4 @@
-import './index';
-
+import './index'
 describe('string-reverse', () => {
   test('should ne function', () => {
     expect(typeof 'test'.reverse).toBe('function');
